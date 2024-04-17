@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-cookiepolicy" content="single_host_origin">
+    <meta name="google-signin-redirect_uri" content="http://localhost:5500/eco.html">
+    <meta name="author" content="Ayotunde Adeleke">
+    <meta name="description" content="EcoExplorer">
+    <meta name="keywords" content="eco,explorer">
+    <meta name="google-signin-client_id" content="136593872334-tqi8g521263spopua88h8q20st28k7ea.apps.googleusercontent.com">
+    <title>Contact Us - EcoExplorer</title>
+    <link rel="stylesheet" href="./css/contact-us.css">
+    <link rel="stylesheet" href="./css/about_us.css">
+    <link rel="stylesheet" href="mode.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+</head>
+
+<!--This is the Banner section of the landing page-->
+<body>
+    <header>
+        <h1><a href="home.html">MPAWA</a></h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="https://www.onlinecoursereport.com/free/entrepreneurs/" target="_blank">Learn a skill</a></li>
+                <li><a href="home.html#projects">Projects</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="land.html">Logout</a></li>
+            </ul>
+            <button id="toggleNavBtn">&#9776; Menu</button>
+        </nav>
+    </header>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you. Fill out the form below to give your feedback and suggestions.</p>
+        
+                <!-- Contact Form -->
+                <form action="/submit-contact-form" method="post">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+        
+                    <button type="button" onclick="submitContactForm()">Submit</button>
+                    <p id="contactMessage"></p>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Contact Information Section -->
+        <section id="contact-info">
+            <div class="container">
+                <h2>Contact Information</h2>
+                <p>Feel free to reach out to us using the contact information below:</p>
+        
+                <address>
+                    <strong>mpawa ltd</strong><br>
+                    Development street,<br>
+                    African Leadership University, Rwanda.<br>
+                    Phone: +250 (079) 123-4567<br>
+                    Email: info@mpawa.com
+                </address>
+            </div>
+        </section>
+
+    </main>
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+        <script src="./scripts/menu.js"></script>
+        <script src="./scripts/menu2.js"></script>    
+        <script src="./scripts/login.js"></script>
+        <script src="./scripts/register.js"></script>
+        <script src="./scripts/species.js"></script>
+        <script src="/scripts//country.js"></script>
+        <script src="./scripts/wildlife.js"></script>
+        <script src="./scripts/forgotpass.js"></script>
+        <script src="./scripts/contactform.js"></script>
+        <script src="./scripts/nav_active.js"></script>
+        
+
+    <footer>
+        <!-- Include your footer content here -->
+        <p>&copy; 2024 EcoExplorer. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

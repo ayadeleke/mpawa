@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"   >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-cookiepolicy" content="single_host_origin">
+    <meta name="google-signin-redirect_uri" content="http://localhost:5500/home.html">
+    <meta name="author" content="Ayotunde Adeleke">
+    <meta name="description" content="mpawa">
+    <meta name="keywords" content="mpawa">
+    <title>Welcome to npawa</title>
+    <link rel="stylesheet" href="./css/land.css"> 
+    <link rel="stylesheet" href="./css/mode.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+</head>
+<body>
+    <!-- Landing Page Section -->
+    <section class="landing">
+        <div class="slideshow-container">
+            <div class="slides">
+                <img src="images/1.jpg" class="slide">
+                <img src="images/creative1.jpg" class="slide">
+                <img src="images/white training.jpg" class="slide">
+                <img src="images/learn2.jpg" class="slide">
+                <img src="images/training.jpg" class="slide">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="landing-content">
+            <h1>Welcome to MPawa</h1>
+            <p>A dynamic social platform dedicated to advancing societal development through education, engagement, 
+                and collaboration. </p>
+            <h3>Like to join us?</h3>
+            <div class="auth-buttons">
+                <button id="loginButton" onclick="openLogin()">Login</button>
+                <button id="registerButton" onclick="openRegister()">Sign Up</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <!-- Your login form content goes here -->
+            <h3>Login</h3>
+            <div class="input-container">
+                <label for="loginUsername">Email/Username:</label>
+                <input type="text" id="loginUsername" name="loginUsername">
+            </div>
+            <div class="input-container">
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword">
+            </div>
+            
+            <button onclick="login()">Login</button>
+            <div id="loadingAnimation" class="loading-animation" style="display: none;"></div>
+            <div class="forgot-password">
+                <a href="#" onclick="openForgotPassword()">Forgot Password?</a>
+            </div>
+            <!-- Google Sign-In button -->
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <div id="loginMessage"></div>
+        </div>
+    </div>
+
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRegister()">&times;</span>
+            <h3>Register</h3>
+            <div class="input-container">
+                <label for="registerFullName">Full Name (Surname First):</label>
+                <input type="text" id="registerFullName" name="registerFullName">
+            </div>
+            <div class="input-container">
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="registerEmail">
+            </div>
+            <div class="input-container">
+                <label for="registerUsername">Username:</label>
+                <input type="text" id="registerUsername" name="registerUsername">
+            </div>
+            <div class="input-container">
+                <label for="registerAddress">Address:</label>
+                <input type="text" id="registerAddress" name="registerAddress">
+            </div>
+            <div class="input-container">
+                <label for="registerNumber">Mobile Number:</label>
+                <input type="text" id="registerNumber" name="registerNumber">
+            </div>
+            <div class="input-container">
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" name="registerPassword">
+                <small>Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.</small>
+            </div>
+            <div class="input-container">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+            </div>
+            <button onclick="register()">Sign Up</button>
+            <div id="registrationLoadingAnimation" class="loading-animation" style="display: none;"></div>
+
+            <!-- Google Sign-In button -->
+            <div class="g-signin2" data-onsuccess="onSignIn"></div><br>
+            <div id="registrationMessage"></div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeForgotPassword()">&times;</span>
+            <!-- Your forgot password form content goes here -->
+            <h3>Forgot Password</h3>
+            <div class="input-container">
+                <label for="forgotPasswordEmail">Email:</label>
+                <input type="email" id="forgotPasswordEmail" name="forgotPasswordEmail">
+            </div>
+            <button onclick="sendResetPasswordEmail()">Send Email</button>
+            <div id="forgotPasswordLoadingAnimation" class="loading-animation" style="display: none;"></div>
+            <div id="forgotPasswordMessage"></div>
+        </div>
+    </div>
+
+    <script src="scripts/slide.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/register.js"></script>
+    <script src="scripts/forgotpass.js"></script>
+    <script src="scripts/contactform.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/menu2.js"></script>
+    <script src="scripts/scroll.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+/* Reset default margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg'); 
+    background-size: cover; 
+    background-position: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: -1;
+}
+
+/* Header Styles */
+header {
+    background-color: #1d253f; 
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    border-radius: 4px;
+}
+
+header h1 {
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Navigation Styles */
+nav {
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    align-items: center;
+}
+
+
+nav ul {
+    list-style-type: none;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Active Navigation Link Styles */
+nav ul li a.active {
+    background-color: white;
+    color: #1d253f;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;
+    }
+
+    #toggleNavBtn {
+        display: none; 
+    }
+}
+
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    body {
+    padding: 0;
+    margin: 0;
+}
+main {
+    margin-right: 0;
+    z-index: auto;
+}
+
+footer {
+    z-index: 3;
+    position: relative;
+    width: auto;
+}
+
+/* Navigation menu styles for small screens */
+nav ul {
+display: none;
+flex-direction: column;
+text-align: center;
+width: 100%;
+position: absolute;
+top: 60px;
+left: 0;
+background-color: rgba(0, 0, 0, 0.7);
+z-index: 2;
+
+/* justify-content: center; */
+}
+
+nav ul.show {
+display: flex;
+}
+
+nav li {
+margin: 0;
+}
+
+nav a {
+font-size: 14px;
+}
+
+/* Add a button to toggle the navigation menu */
+#toggleNavBtn {
+background-color: rgba(0, 0, 0, 0);
+color: #fff;
+border: none;
+cursor: pointer;
+margin-bottom: 60px;
+}
+/* Hide the navigation links on smaller screens by default */
+nav ul:not(.show) {
+    display: none;
+}
+
+nav #toggleNavBtn {
+    margin-bottom: 10px;
+}
+
+/* Style the list items for mobile view */
+nav li {
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 5px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.section {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.section:nth-child(3) {
+    width: calc(25% - 10px);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project, .event {
+    margin-bottom: 20px;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.event h3 {
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1d253f;
+    color: #fff;
+    text-align: center;
+    /* padding: 10px 0; */
+    flex-shrink: 0;
+}
