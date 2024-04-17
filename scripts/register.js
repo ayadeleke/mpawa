@@ -55,13 +55,6 @@ document.getElementById('confirmPassword').addEventListener('keyup', function (e
 });
 
 
-// Function to handle registration with Google
-function registerWithGoogle(email) {
-    // Perform registration logic here using the provided email
-    console.log('Registering user with email:', email);
-    openRegister();
-}
-
 // Registration function
 function register() {
     // Get input values
@@ -74,6 +67,16 @@ function register() {
     const number = document.getElementById('registerNumber').value.trim();
     const registrationMessage = document.getElementById('registrationMessage');
     const loadingAnimation = document.getElementById('registrationLoadingAnimation');
+
+    // Construct requestBody object
+    const requestBody = {
+        username: username,
+        email: email,
+        password: password,
+        fullName: fullName,
+        address: address,
+        number: number
+    };
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
